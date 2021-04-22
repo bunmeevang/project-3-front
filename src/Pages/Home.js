@@ -8,7 +8,7 @@ import HomeNav from '../HomePageComponents/HomeNav'
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [userName, setUserName] = useState("Anon")
-  const [fetchedName, setFetchedName] = usestate('FetchAnon')
+  const [fetchedName, setFetchedName] = useState('FetchAnon')
 
 
 
@@ -65,6 +65,6 @@ function Home() {
 //         </div>
 //     </div>
 //   );
-// }
+}
 
 export default Home;
