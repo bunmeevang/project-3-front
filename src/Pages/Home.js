@@ -8,7 +8,7 @@ import HomeNav from '../HomePageComponents/HomeNav'
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [userName, setUserName] = useState("Anon")
-  const [fetchedName, setFetchedName] = usestate('FetchAnon')
+  const [password, setPassword] = useState('thePass')
 
 
 
@@ -43,28 +43,28 @@ function Home() {
   }
 
   // if( username === fetchedName)
-  return (
-    <div className="App">
-      <h1> Home Page </h1>
-      <HomeFeed />
-      <HomeNav />
-    </div>
-  );
+  // return (
+  //   <div className="App">
+  //     <h1> Home Page </h1>
+  //     <HomeFeed />
+  //     <HomeNav />
+  //   </div>
+  // );
 
   // else {
-//   return (
-//     <div className="App">
-//       <h1>CODR</h1>
-//         <div>
-//             <h2>LOGIN</h2>
-//             <form>
-//                   Username: <input type='text'></input> <br />
-//                   <button type='submit' onClick={handleSubmit()}>Submit!</button>
-//             </form>
-//             <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
-//         </div>
-//     </div>
-//   );
-// }
+  return (
+    <div className="App">
+      <h1>CODR</h1>
+        <div>
+            <h2>LOGIN</h2>
+            <form>
+                  Username: <input type='text'></input> <br />
+                  <button type='submit' onClick={handleSubmit()}>Submit!</button>
+            </form>
+            <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+        </div>
+    </div>
+  );
+}
 
 export default Home;
