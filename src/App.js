@@ -1,7 +1,9 @@
 import './App.css';
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Other from './Other'
-import Home from './Home'
+import AboutUs from './Pages/AboutUs'
+import Home from './Pages/Home'
+import Faq from './Pages/Faq'
+import Account from './Pages/Account'
 
 // Save the Component, key and path in an array of objects for each Route
 // You could write all routes by hand but I'm lazy annd this lets me use
@@ -11,14 +13,19 @@ import Home from './Home'
 
 const routes = [
   {
-    Component: Other,
-    key: 'Other',
-    path: '/other'
+    Component: AboutUs,
+    key: 'About Us',
+    path: '/AboutUs'
   },
   {
-    Component: Other,
-    key: 'Another',
-    path: '/another'
+    Component: Faq,
+    key: 'Faq',
+    path: '/faq'
+  },
+  {
+    Component: Account,
+    key: 'Account',
+    path: '/account'
   },
   {
     Component: Home,
@@ -30,9 +37,11 @@ const routes = [
 export default function App () {
   return (
     <Router>
-      <nav>
-        {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
-      </nav>
+      <header>
+        <nav>
+          {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
+        </nav>
+      </header>
       <Switch>
         {
           routes.map(({key, Component, path}) => (

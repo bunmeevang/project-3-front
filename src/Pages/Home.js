@@ -1,5 +1,8 @@
 // import Login from "./components/Login"
 import {useState, useEffect} from 'react'
+import "../HomePageComponents/HomeFeed"
+import HomeFeed from '../HomePageComponents/HomeFeed'
+import HomeNav from '../HomePageComponents/HomeNav'
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -10,7 +13,7 @@ function Home() {
 
   const handleSubmit = async (e) => {
     // fetch()
-    // filter through fetch data to see if username and password matches
+    // filter through fetch data to see if username
     // If there is a match then setLoggedIn(true)
 
 
@@ -38,21 +41,28 @@ function Home() {
     // }
   }
 
-
-  // else {
+  // if( username === fetchedName)
   return (
     <div className="App">
-      <h1>CODR</h1>
-      <div>
-            <h2>LOGIN</h2>
-            <form>
-                  Username: <input type='text'></input> <br />
-                  Password: <input type="password"></input> <br /> 
-                  <button type='submit' onClick={handleSubmit()}>Submit!</button>
-            </form>
-        </div>
+      <h1> Home Page </h1>
+      <HomeFeed />
+      <HomeNav />
     </div>
   );
+
+  // else {
+  // return (
+  //   <div className="App">
+  //     <h1>CODR</h1>
+  //     <div>
+  //           <h2>LOGIN</h2>
+  //           <form>
+  //                 Username: <input type='text'></input> <br />
+  //                 <button type='submit' onClick={handleSubmit()}>Submit!</button>
+  //           </form>
+  //       </div>
+  //   </div>
+  // );
 }
 
 export default Home;
