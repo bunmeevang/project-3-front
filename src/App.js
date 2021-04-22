@@ -4,6 +4,7 @@ import AboutUs from './Pages/AboutUs'
 import Home from './Pages/Home'
 import Faq from './Pages/Faq'
 import Account from './Pages/Account'
+import CreateUser from './Pages/CreateUser'
 
 // Save the Component, key and path in an array of objects for each Route
 // You could write all routes by hand but I'm lazy annd this lets me use
@@ -43,12 +44,13 @@ export default function App () {
         </nav>
       </header>
       <Switch>
+        <Route path={'/createUser'} exact component={CreateUser}/>
         {
           routes.map(({key, Component, path}) => (
             <Route
               key={key}
               path={path}
-              component={props => <Component {...props} page={key} />}
+              component={props => <Component {...props} exact page={key} />}
               />))
         }
       </Switch>
