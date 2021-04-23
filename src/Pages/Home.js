@@ -4,9 +4,11 @@ import {Link} from 'react-router-dom'
 import "../HomePageComponents/HomeFeed"
 import HomeFeed from '../HomePageComponents/HomeFeed'
 import HomeNav from '../HomePageComponents/HomeNav'
+import Account from "../HomePageComponents/Account"
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [selectAcc, setSelectAcc] = useState(false)
   const [theProfData, setTheProfData] = useState({})
   const [userName, setUserName] = useState("Anon")
   const [fetchedName, setFetchedName] = useState('FetchAnon')
@@ -32,19 +34,22 @@ function Home() {
     }
   }
 
-  if(loggedIn){
+  const isLogged = () =>{
   return (
     <div className="App">
-      <h1> Home Page </h1>
-      {userName}
-      {fetchedName}
+      {selectAcc ? <Account profData={theProfData}/>
+       : <div>
+       <h1> Home Page </h1>
+       <p onClick={()=> setSelectAcc(true)}>Account</p>
+       <HomeFeed />
+       <HomeNav />
+       </div>}
+      
 
-      <HomeFeed />
-      <HomeNav />
     </div>
-  );
+  );}
 
-  }else {
+  const notLogged =() =>{
     return (
       <div className="App">
         <h1>CODR</h1>
@@ -55,11 +60,10 @@ function Home() {
                     <button type='submit' onClick={handleSubmit}>Submit!</button>
               </form>
               <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
-              
           </div>
       </div>
     );
   }
+  return loggedIn ? isLogged() : notLogged()
 }
-
 export default Home;

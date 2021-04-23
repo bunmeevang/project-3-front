@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-export default function Account(props){
+export default function Account({profData}){
     const fetchProfileInfo = async () => {    
     
         // turn this into something for this project
@@ -29,21 +29,20 @@ export default function Account(props){
 
     return (
         <div className="App">
-            <h1>{props.page}</h1>
-            <h3> Name, Last </h3>
+            {/* <h1>{props.page}</h1> */}
+            <h3> {profData.firstname} {profData.lastname} </h3>
             <div>
                 <ul>
-                    <li>Location</li>
-                    <li>Email</li>
-                    <li>LinkedIn</li>        
-                    <li>Gender</li>                                       
-                    <li>Pronouns</li>                                         
-                    <li>Birthday</li>
+                    <li>Location {profData.location}</li>
+                    {/* <li>Email {profData.}</li> */}
+                    <li>LinkedIn {profData.linkedin}</li>
+                    <li>Pronouns {profData.genderpronouns}</li>
+                    {/* <li>Birthday {profData.}</li> */}
                 </ul>
             </div>
             <div>
                 <h4>About Me</h4>
-                <p>Information about me</p>
+                <p>{profData.aboutme}</p>
             </div>
         </div>
     )
