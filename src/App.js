@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import AboutUs from './Pages/AboutUs'
 import Home from './Pages/Home'
 import Faq from './Pages/Faq'
-import Account from './Pages/Account'
+import Account from './HomePageComponents/Account'
 import CreateUser from './Pages/CreateUser'
 
 // Save the Component, key and path in an array of objects for each Route

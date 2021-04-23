@@ -22,7 +22,7 @@ function Home() {
     // e.preventDefault();
     // try {
     //   const response = await fetch(
-    //     "https://todos-by-bernier.herokuapp.com/todos/",
+    //     "https://codr-project-3.herokuapp.com/profile/",
     //     {
     //       method: "POST",
     //       headers: {
