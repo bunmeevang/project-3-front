@@ -7,42 +7,29 @@ import HomeNav from '../HomePageComponents/HomeNav'
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [theProfData, setTheProfData] = useState([])
   const [userName, setUserName] = useState("Anon")
   const [fetchedName, setFetchedName] = useState('FetchAnon')
 
 
 
   const handleSubmit = async (e) => {
-    // fetch()
-    // filter through fetch data to see if username
-    // If there is a match then setLoggedIn(true)
-
-
-    // turn this into something for this project
     // e.preventDefault();
-    // try {
-    //   const response = await fetch(
-    //     "https://codr-project-3.herokuapp.com/profile/",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify(newTodo)
-    //     }
-    //   );
-    //   const data = await response.json();
-    //   setTodos([...todos, data]);
-    //   setNewTodo({
-    //     subject: "",
-    //     details: ""
-    //   });
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    console.log(e)
+    try {
+      const response = await fetch(
+        "https://codr-project-3.herokuapp.com/profile/",
+      );
+      const data = await response.json();
+      setTheProfData(data);
+      console.log(data[0].firstname)
+      setFetchedName(data[0].firstname)
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  // if( username === fetchedName)
+  if( userName === fetchedName){
   return (
     <div className="App">
       <h1> Home Page </h1>
@@ -51,20 +38,21 @@ function Home() {
     </div>
   );
 
-  // else {
-  // return (
-  //   <div className="App">
-  //     <h1>CODR</h1>
-  //       <div>
-  //           <h2>LOGIN</h2>
-  //           <form>
-  //                 Username: <input type='text'></input> <br />
-  //                 <button type='submit' onClick={handleSubmit()}>Submit!</button>
-  //           </form>
-  //           <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
-  //       </div>
-  //   </div>
-  // );
+  }else {
+    return (
+      <div className="App">
+        <h1>CODR</h1>
+          <div>
+              <h2>LOGIN</h2>
+              <form>
+                    Username: <input type='text' onChange={event => setUserName(event.target.value)}></input> <br />
+                    <button type='submit' onClick={handleSubmit}>Submit!</button>
+              </form>
+              <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+          </div>
+      </div>
+    );
+  }
 }
 
 export default Home;
