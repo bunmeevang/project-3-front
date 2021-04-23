@@ -7,32 +7,38 @@ import HomeNav from '../HomePageComponents/HomeNav'
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
-  const [theProfData, setTheProfData] = useState([])
+  const [theProfData, setTheProfData] = useState({})
   const [userName, setUserName] = useState("Anon")
   const [fetchedName, setFetchedName] = useState('FetchAnon')
 
 
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    console.log(e)
+    e.preventDefault();
     try {
       const response = await fetch(
         "https://codr-project-3.herokuapp.com/profile/",
       );
       const data = await response.json();
-      setTheProfData(data);
-      console.log(data[0].firstname)
-      setFetchedName(data[0].firstname)
+      data.map( object => {
+        if(object.firstname === userName){
+          setTheProfData(object)
+          setFetchedName(object.firstname)
+          setLoggedIn(true)
+        }
+      })
     } catch (error) {
       console.error(error);
     }
   }
 
-  if( userName === fetchedName){
+  if(loggedIn){
   return (
     <div className="App">
       <h1> Home Page </h1>
+      {userName}
+      {fetchedName}
+
       <HomeFeed />
       <HomeNav />
     </div>
@@ -49,6 +55,7 @@ function Home() {
                     <button type='submit' onClick={handleSubmit}>Submit!</button>
               </form>
               <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+              
           </div>
       </div>
     );
