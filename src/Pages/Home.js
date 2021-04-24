@@ -43,13 +43,13 @@ function Home() {
   }
 
   // if( username === fetchedName)
-  // return (
-  //   <div className="App">
-  //     <h1> Home Page </h1>
-  //     <HomeFeed />
-  //     <HomeNav />
-  //   </div>
-  // );
+  return (
+    <div className="App">
+      <h1> Home Page </h1>
+      <HomeFeed />
+      <HomeNav />
+    </div>
+  );
 
   // else {
   return (
