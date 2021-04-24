@@ -1,46 +1,69 @@
 
+import {useState} from 'react';
 
 
 export default function CreateUser() {
-    const handleSubmit = async (e) => {
-        // fetch()
-        // filter through fetch data to see if username
-        // If there is a match then setLoggedIn(true)
-    
-    
-        // turn this into something for this project
-        // e.preventDefault();
-        // try {
-        //   const response = await fetch(
-        //     "https://todos-by-bernier.herokuapp.com/todos/",
-        //     {
-        //       method: "POST",
-        //       headers: {
-        //         "Content-Type": "application/json"
-        //       },
-        //       body: JSON.stringify(newTodo)
-        //     }
-        //   );
-        //   const data = await response.json();
-        //   setTodos([...todos, data]);
-        //   setNewTodo({
-        //     subject: "",
-        //     details: ""
-        //   });
-        // } catch (error) {
-        //   console.error(error);
-        // }
+    const [newInfo, setNewInfo] = useState({
+        firstname: "Empty",
+        lastname: "Empty",
+        genderpronouns: "Empty",
+        location: "Empty",
+        aboutme: "Empty",
+        linkedin: "Empty"
+      });
+
+    const handleSubmit = async (e) => {   
+        // console.log(pkKey) 
+        e.preventDefault();
+        try {
+            const response = await fetch(
+            `https://codr-project-3.herokuapp.com/profile/`
+            ,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(newInfo)
+            }
+            );
+            const data = await response.json();
+            console.log(newInfo)
+            //   setTodos([...todos, data]);
+            setNewInfo({
+                firstname: "",
+                lastname: "",
+                genderpronouns: "",
+                location: "",
+                aboutme: "",
+                linkedin: ""
+            });
+        } catch (error) {
+            console.error(error);
+        }
     }
+    const handleChange = (e) => {
+        console.log(e.target.firstname)
+        setNewInfo({ ...newInfo, [e.target.name]: e.target.value });
+        console.log(newInfo)
+      };
 
     return (
         <div>
             <h1>Create New User</h1>
-             <form>
-                   Username: <input type='text'></input> <br />
-                   <button type='submit' onClick={handleSubmit()}>Submit!</button>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    First name:{""}
+                    <input
+                    type="text"
+                    name="firstname"
+                    value={newInfo.firstname}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <input type='submit' />
              </form>
          </div>
         
     )
-
 }

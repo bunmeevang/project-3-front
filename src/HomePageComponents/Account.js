@@ -45,7 +45,7 @@ export default function Account({profData}){
     }
     const handleChange = (e) => {
         setEditedInfo({ ...editedInfo, [e.target.name]: e.target.value });
-        // console.log(editedInfo)
+        console.log(editedInfo)
       };
 
     return (
@@ -58,62 +58,62 @@ export default function Account({profData}){
         {update ?       
         <div>
             <form onSubmit={fetchProfileInfo}>
-            <label>
-                First name:{" "}
-                <input
-                type="text"
-                name="firstname"
-                value={editedInfo.firstname}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <label>
-                Last name:{" "}
-                <input
-                type="text"
-                name="lastname"
-                value={editedInfo.lastname}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <label>
-                Gender Pronouns:{" "}
-                <input
-                type="text"
-                name="genderpronouns"
-                value={editedInfo.genderpronouns}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <label>
-                Location:{" "}
-                <input
-                type="text"
-                name="location"
-                value={editedInfo.location}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <label>
-                About Me:{" "}
-                <input
-                type="text"
-                name="aboutme"
-                value={editedInfo.aboutme}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <label>
-                LinkedIn:{" "}
-                <input
-                type="text"
-                name="linkedin"
-                value={editedInfo.linkedin}
-                onChange={handleChange}
-                />
-            </label><br /><br />
-            <br /><br />
-            <input type="submit" />
+                <label>
+                    First name:{" "}
+                    <input
+                    type="text"
+                    name="firstname"
+                    value={editedInfo.firstname}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <label>
+                    Last name:{" "}
+                    <input
+                    type="text"
+                    name="lastname"
+                    value={editedInfo.lastname}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <label>
+                    Gender Pronouns:{" "}
+                    <input
+                    type="text"
+                    name="genderpronouns"
+                    value={editedInfo.genderpronouns}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <label>
+                    Location:{" "}
+                    <input
+                    type="text"
+                    name="location"
+                    value={editedInfo.location}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <label>
+                    About Me:{" "}
+                    <input
+                    type="text"
+                    name="aboutme"
+                    value={editedInfo.aboutme}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <label>
+                    LinkedIn:{" "}
+                    <input
+                    type="text"
+                    name="linkedin"
+                    value={editedInfo.linkedin}
+                    onChange={handleChange}
+                    />
+                </label><br /><br />
+                <br /><br />
+                <input type="submit" />
             </form>
             {/* <h1>{props.page}</h1> */}
             <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
