@@ -23,11 +23,11 @@ const routes = [
     key: 'Faq',
     path: '/faq'
   },
-  {
-    Component: Account,
-    key: 'Account',
-    path: '/account'
-  },
+  // {
+  //   Component: Account,
+  //   key: 'Account',
+  //   path: '/account'
+  // },
   {
     Component: Home,
     key: 'Home',
