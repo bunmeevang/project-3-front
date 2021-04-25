@@ -1,4 +1,4 @@
-
+import styles from "./CreateUser.module.css";
 import {useState} from 'react';
 
 
@@ -50,7 +50,7 @@ export default function CreateUser() {
 
     return (
         <div>
-            <h1>Create New User</h1>
+            <h1 className={styles.createnewuser}>Create New User</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     First name:{""}

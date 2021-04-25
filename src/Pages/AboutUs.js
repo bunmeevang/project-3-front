@@ -1,8 +1,10 @@
+import styles from "./AboutUs.module.css";
+
 function AboutUs(props) {
   return (
     <div className="App">
       <h1>{props.page}</h1>
-      <p>This project was created by:</p>
+      <p className={styles.createdby}>This project was created by:</p>
       <ul>
         <li>
           <ul>
