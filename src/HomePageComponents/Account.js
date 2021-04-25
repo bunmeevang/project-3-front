@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import DelAccount from './DelAccount'
 export default function Account({profData}){
-    const [theData, setTheData] = useState(profData)
     const [pkKey, setPkKey] = useState(profData.id)
     const [editedInfo, setEditedInfo] = useState({
         firstname: "",
@@ -48,6 +48,8 @@ export default function Account({profData}){
         console.log(editedInfo)
       };
 
+    
+
     return (
         <div className="App">
         <h5 onClick={() => {
@@ -57,6 +59,7 @@ export default function Account({profData}){
         }}>Update</h5>
         {update ?       
         <div>
+            <DelAccount profData={profData}/>
             <form onSubmit={fetchProfileInfo}>
                 <label>
                     First name:{" "}
