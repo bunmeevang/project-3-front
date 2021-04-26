@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
 .App {
   text-align: center;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 45px;
+  margin: 50px 20%;
+}
+
+.title{
+  font-family: 'Aldrich', sans-serif;
+  font-size: 50px;
+}
+
+.user{
+  font-size: 20px;
 }
 
 .App-logo {
@@ -36,3 +53,4 @@
     transform: rotate(360deg);
   }
 }
+
