@@ -12,7 +12,7 @@
 
 .App {
     /* background-color: thistle; */
-    background-color: white;
+    background-color: lightgreen;
     text-align: left;
     font-size: 15px;
     /* border: 1px solid black; */
@@ -28,7 +28,7 @@
     transform: translate(0%, 30%);
     /* border: 2px solid black; */
     margin-left: 50px;
-    color: darkblue;
+    color: darkgreen;
 }
 
 .aboutUl {
@@ -49,7 +49,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-left: 50px;
-    color: darkblue;
+    color: darkgreen;
 }
 
 .intro {
@@ -77,7 +77,7 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, 10%);
-    background-color:cornflowerblue;
+    background-color: goldenrod;
     color: aqua;
     border: none;
     font-family: 'Roboto Mono', monospace;

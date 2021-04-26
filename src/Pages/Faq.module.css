@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
 
 .border {
-    background-color:thistle;
+    background-color:lightgreen;
     text-align: left;
     font-size: 15px;
     /* border: 1px solid black; */
@@ -14,12 +14,14 @@
 }
 
 .questions {
+    /* color: aqua; */
     font-size: 20px;
     margin: 20px 30px;
     font-family: 'Roboto Mono', monospace;
 }
 
 .answers {
+    /* color: aqua; */
     font-size: 18px;
     margin: 20px 20px;
     padding: 10px 10px;
@@ -27,12 +29,12 @@
 }
 
 .faq {
-    color: aqua;
+    color: green;
     padding-top: 2rem;
     margin: 20px 20px;
     font-family: 'Roboto Mono', monospace;
 }
 
 .changeColor {
-    color: aqua;
+    color: green;
 }
