@@ -4,67 +4,69 @@ import {Link} from 'react-router-dom'
 import "../HomePageComponents/HomeFeed"
 import HomeFeed from '../HomePageComponents/HomeFeed'
 import HomeNav from '../HomePageComponents/HomeNav'
+import Account from "../HomePageComponents/Account"
+import styles from "./Home.module.css";
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [selectAcc, setSelectAcc] = useState(false)
+  const [theProfData, setTheProfData] = useState({})
   const [userName, setUserName] = useState("Anon")
-  const [password, setPassword] = useState('thePass')
+  const [fetchedName, setFetchedName] = useState('FetchAnon')
 
 
 
   const handleSubmit = async (e) => {
-    // fetch()
-    // filter through fetch data to see if username
-    // If there is a match then setLoggedIn(true)
-
-
-    // turn this into something for this project
-    // e.preventDefault();
-    // try {
-    //   const response = await fetch(
-    //     "https://todos-by-bernier.herokuapp.com/todos/",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify(newTodo)
-    //     }
-    //   );
-    //   const data = await response.json();
-    //   setTodos([...todos, data]);
-    //   setNewTodo({
-    //     subject: "",
-    //     details: ""
-    //   });
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://codr-project3.herokuapp.com/profile/",
+      );
+      const data = await response.json();
+      data.map( object => {
+        if(object.firstname === userName){
+          setTheProfData(object)
+          setFetchedName(object.firstname)
+          setLoggedIn(true)
+        }
+      })
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  // if( username === fetchedName)
-  return (
-    <div className="App">
-      <h1> Home Page </h1>
-      <HomeFeed />
-      <HomeNav />
-    </div>
-  );
 
-  // else {
+  const isLogged = () =>{
   return (
     <div className="App">
-      <h1>CODR</h1>
-        <div>
-            <h2>LOGIN</h2>
-            <form>
-                  Username: <input type='text'></input> <br />
-                  <button type='submit' onClick={handleSubmit()}>Submit!</button>
-            </form>
-            <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
-        </div>
+      <p onClick={()=> setSelectAcc(true)}>Account</p>
+      <p onClick={()=> setSelectAcc(false)}>Home</p>
+      {selectAcc ? <Account profData={theProfData}/>
+       : <div>
+       <h1> Home Page </h1>
+       <HomeFeed />
+       <HomeNav />
+       </div>}
+      
+
     </div>
-  );
+  );}
+
+  const notLogged =() =>{
+    return (
+      <div className="App">
+        <h1>CODR</h1>
+          <div>
+              <h2>LOGIN</h2>
+              <form>
+                    Username: <input type='text' onChange={event => setUserName(event.target.value)}></input> <br />
+                    <button type='submit' onClick={handleSubmit}>Submit!</button>
+              </form>
+              <div className={styles.donthavelogin}> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+          </div>
+      </div>
+    );
+  }
+  return loggedIn ? isLogged() : notLogged()
 }
-
 export default Home;

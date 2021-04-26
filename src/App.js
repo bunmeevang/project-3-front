@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import AboutUs from './Pages/AboutUs'
 import Home from './Pages/Home'
 import Faq from './Pages/Faq'
-import Account from './Pages/Account'
+import Account from './HomePageComponents/Account'
 import CreateUser from './Pages/CreateUser'
 import HomeFeed from './HomePageComponents/HomeFeed';
 
@@ -24,11 +24,11 @@ const routes = [
     key: 'Faq',
     path: '/faq'
   },
-  {
-    Component: Account,
-    key: 'Account',
-    path: '/account'
-  },
+  // {
+  //   Component: Account,
+  //   key: 'Account',
+  //   path: '/account'
+  // },
   {
     Component: Home,
     key: 'Home',
