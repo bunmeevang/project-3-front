@@ -55,10 +55,10 @@ function Home() {
   const notLogged =() =>{
     return (
       <div className="App">
-        <h1>CODR</h1>
+        <h1 className="title">CODR</h1>
           <div>
               <h2>LOGIN</h2>
-              <form>
+              <form className="user">
                     Username: <input type='text' onChange={event => setUserName(event.target.value)}></input> <br />
                     <button type='submit' onClick={handleSubmit}>Submit!</button>
               </form>

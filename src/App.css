@@ -1,5 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
 .App {
   text-align: center;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 45px;
+  margin: 50px 20%;
+}
+
+
+.headers {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  text-align: center;
+  /* border: 1px solid black; */
+  height: 100px;
+  /* background-color: cornflowerblue; */
+  background: url(https://img5.goodfon.com/wallpaper/nbig/2/27/zelenyi-fon-tekstura-abstract-background-green-color.jpg);
+  /* background: url(https://wallpaperaccess.com/full/2835280.jpg); */
+  background-size: 100%;
+}
+
+.linkFlex{
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  width: 100%;
+}
+
+.linkFlex > a {
+  text-decoration: none;
+}
+
+.title{
+  font-family: 'Aldrich', sans-serif;
+  font-size: 50px;
+}
+
+.user{
+  font-size: 20px;
 }
 
 .App-logo {
@@ -36,3 +78,4 @@
     transform: rotate(360deg);
   }
 }
+

@@ -1,3 +1,94 @@
-.createdby {
-    font-size: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+
+.title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 50px;
+    font-family: 'Aldrich', sans-serif;
+    /* border: 2px solid black; */
 }
+
+.App {
+    /* background-color: thistle; */
+    background-color: lightgreen;
+    text-align: left;
+    font-size: 15px;
+    /* border: 1px solid black; */
+    margin: 40px 150px;
+    border-radius: 10px;
+    /* border-style: outset; */
+    box-shadow: 0px 0px 3px gray;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.aboutUs {
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(0%, 30%);
+    /* border: 2px solid black; */
+    margin-left: 50px;
+    color: darkgreen;
+}
+
+.aboutUl {
+    list-style-type: none;
+}
+
+.names {
+    margin-left: -30px;
+    /* color: aqua; */
+}
+
+.aboutLi {
+    margin-left: -30px;
+    list-style-type: none;
+}
+
+.aboutIntro {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    color: darkgreen;
+}
+
+.intro {
+    /* border: 2px solid black; */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contact:hover{
+    transform: translate(-50%, 10%) scale(1.1);
+    transition: ease-in-out .3s;
+    /* transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); */
+    box-shadow: 0px 0px 10px aqua;
+}
+
+.contact{
+    margin-bottom: 30px;
+    margin-left: auto;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px 5px;
+    padding: 0px 20px;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 10%);
+    background-color: goldenrod;
+    color: aqua;
+    border: none;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+}
+
+/* .email {
+    margin-left: 50px;
+} */
+
+/* .background {
+    border: 2px solid black;
+    height: 200px;
+} */

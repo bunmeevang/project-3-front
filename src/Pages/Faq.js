@@ -2,15 +2,15 @@ import styles from "./Faq.module.css";
 export default function Faq(props){
 
     return (
-        <div className="App">
-            <h1>{props.page}</h1>
+        <div className={styles.border}>
+            <h1 className={styles.faq}>{props.page}</h1>
             <div>
-                <p className={styles.questions}>Q: What's wrong with your site?</p>
-                <p>A: This was a test website where we were testing our skills, so some features may still not be up and running.</p>
+                <p className={styles.questions}><span className={styles.changeColor}>Q:</span> What's wrong with your site?</p>
+                <p className={styles.answers}><span className={styles.changeColor}>A:</span> This was a test website where we were testing our skills, so some features may still not be up and running.</p>
             </div>
             <div>
-                <p>Q: How do I create An account?</p>
-                <p>A: You create an account.</p>
+                <p className={styles.questions}><span className={styles.changeColor}>Q:</span> How do I create An account?</p>
+                <p className={styles.answers}><span className={styles.changeColor}>A:</span> Click on the "Create a new user!" in the home page.</p>
             </div>
         </div>
     )

@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
+
+.border {
+    background-color:lightgreen;
+    text-align: left;
+    font-size: 15px;
+    /* border: 1px solid black; */
+    margin: 80px 150px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px gray;
+    /* border-width: 40px; */
+    height: 25rem;
+    /* max-height: 50rem; */
+}
+
 .questions {
+    /* color: aqua; */
     font-size: 20px;
+    margin: 20px 30px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.answers {
+    /* color: aqua; */
+    font-size: 18px;
+    margin: 20px 20px;
+    padding: 10px 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.faq {
+    color: green;
+    padding-top: 2rem;
+    margin: 20px 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.changeColor {
+    color: green;
 }
