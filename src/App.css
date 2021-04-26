@@ -10,6 +10,19 @@
   margin: 50px 20%;
 }
 
+
+.headers {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  text-align: center;
+  /* border: 1px solid black; */
+  height: 100px;
+  /* background-color: cornflowerblue; */
+  background: url(https://img5.goodfon.com/wallpaper/nbig/2/27/zelenyi-fon-tekstura-abstract-background-green-color.jpg);
+  /* background: url(https://lh3.googleusercontent.com/proxy/GimhjZe1XUybbrkB0cPjP4Lr1SAkLIXBVEsPaoW-gdjkBxqpQ1cz6hcwzAacWPB_IOOBm2FZbB6ibU4TqDKZGHE9bXZucayjTlsxrQT_xVhVSd7vQbCs51TIs6G0azyyFA); */
+}
+
 .title{
   font-family: 'Aldrich', sans-serif;
   font-size: 50px;

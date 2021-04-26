@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Faq from './Pages/Faq'
 import Account from './HomePageComponents/Account'
 import CreateUser from './Pages/CreateUser'
+// import Header from './Components/Header/Header';
 
 // Save the Component, key and path in an array of objects for each Route
 // You could write all routes by hand but I'm lazy annd this lets me use
@@ -38,7 +39,9 @@ const routes = [
 export default function App () {
   return (
     <Router>
-      <header>
+      {/* <Header /> */}
+      <header className="headers">
+        {/* <h1 className="title">CODR</h1> */}
         <nav>
           {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>
