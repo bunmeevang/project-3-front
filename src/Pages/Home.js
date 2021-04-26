@@ -20,7 +20,7 @@ function Home() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://codr-project-3.herokuapp.com/profile/",
+        "https://codr-project3.herokuapp.com/profile/",
       );
       const data = await response.json();
       data.map( object => {

@@ -11,13 +11,12 @@ export default function CreateUser() {
         aboutme: "Empty",
         linkedin: "Empty"
       });
-
     const handleSubmit = async (e) => {   
         // console.log(pkKey) 
         e.preventDefault();
         try {
             const response = await fetch(
-            `https://codr-project-3.herokuapp.com/profile/`
+            `https://codr-project3.herokuapp.com/profile/`
             ,
             {
               method: "POST",
@@ -64,6 +63,5 @@ export default function CreateUser() {
                 <input type='submit' />
              </form>
          </div>
-        
     )
 }
