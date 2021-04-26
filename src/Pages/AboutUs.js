@@ -1,52 +1,56 @@
-import './AboutUs.css';
+import styles from "./AboutUs.module.css";
 
 function AboutUs(props) {
   return (
-    <div className="border">
-      <h1 className="aboutUs">{props.page}</h1>
-      <p className="intro">We are software engineering students at General Assembly. Our goal is to make an App that people can connect to each other. </p>
-      <p className="aboutIntro">This project was created by:</p>
-      <ul className="aboutUl">
-        <li>
+  <div className={styles.background}>
+    <div className={styles.App}>
+      <h1 className={styles.aboutUs}>{props.page}</h1>
+      <p className={styles.intro}>We are software engineering students at General Assembly. Our goal is to make an App that people can connect to each other. </p>
+
+      <p className={styles.aboutIntro}>This project was created by:</p>
+      <ul>
+
+        <li className={styles.aboutUl}>
           <ul>
-            <h4 className="names">
+            <h4 className={styles.names}>
               Arichson Her
             </h4>
-            <li className="aboutLi">Role for this project: Frontend Deveoper</li>
+            <li className={styles.aboutLi}>Role for this project: Frontend Deveoper</li>
           
           </ul>
         </li>
-        <li>
+        <li className={styles.aboutUl}>
           <ul>
-            <h4 className="names">
+            <h4 className={styles.names}>
               Bunmee Vang
             </h4>
-            <li className="aboutLi">Role for this project: Backend Deveoper</li>
+            <li className={styles.aboutLi}>Role for this project: Backend Deveoper</li>
           
           </ul>
         </li>
-        <li>
+        <li className={styles.aboutUl}>
           <ul>
-            <h4 className="names">
+            <h4 className={styles.names}>
               Drew Wilson
             </h4>
-            <li className="aboutLi">Role for this project: Backend Deveoper</li>
+            <li className={styles.aboutLi}>Role for this project: Backend Deveoper</li>
           
           </ul>
         </li>
-        <li>
+        <li className={styles.aboutUl}>
           <ul>
-            <h4 className="names">
+            <h4 className={styles.names}>
               Gabrielle 
             </h4>
-            <li className="aboutLi">Role for this project: Frontend Deveoper</li>
+            <li className={styles.aboutLi}>Role for this project: Frontend Deveoper</li>
           
           </ul>
         </li>
       </ul>
-      <h3 className="contact">Contact us</h3>
-      <p>Email us at: bunmee.vang@gmail.com</p>
+      <button className={styles.contact}>Contact us</button>
+      {/* <p className={styles.email}>Email us at: bunmee.vang@gmail.com</p> */}
     </div>
+  </div>
   );
 }
 

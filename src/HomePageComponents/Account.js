@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import DelAccount from './DelAccount'
 export default function Account({profData}){
-    const [theData, setTheData] = useState(profData)
     const [pkKey, setPkKey] = useState(profData.id)
     const [editedInfo, setEditedInfo] = useState({
         firstname: "",
@@ -17,19 +17,18 @@ export default function Account({profData}){
         e.preventDefault();
         try {
             const response = await fetch(
-            `https://codr-project-3.herokuapp.com/profile/${pkKey}`
+            `https://codr-project3.herokuapp.com/profile/${pkKey}`
             ,
             {
               method: "PUT",
               headers: {
-                "Content-Type": "application/json",
-                'Connection': "keep-alive"
+                "Content-Type": "application/json"
               },
               body: JSON.stringify(editedInfo)
             }
           );
           const data = await response.json();
-          console.log(data)
+          console.log('Hello')
         //   setTodos([...todos, data]);
           setEditedInfo({
             firstname: "",
@@ -48,6 +47,8 @@ export default function Account({profData}){
         console.log(editedInfo)
       };
 
+    
+
     return (
         <div className="App">
         <h5 onClick={() => {
@@ -57,6 +58,7 @@ export default function Account({profData}){
         }}>Update</h5>
         {update ?       
         <div>
+            <DelAccount profData={profData}/>
             <form onSubmit={fetchProfileInfo}>
                 <label>
                     First name:{" "}
@@ -115,15 +117,12 @@ export default function Account({profData}){
                 <br /><br />
                 <input type="submit" />
             </form>
-            {/* <h1>{props.page}</h1> */}
             <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
             <div>
                 <ul>
                     <li>Location {profData.location}</li>
-                    {/* <li>Email {profData.}</li> */}
                     <li>LinkedIn {profData.linkedin}</li>
                     <li>Pronouns {profData.genderpronouns}</li>
-                    {/* <li>Birthday {profData.}</li> */}
                 </ul>
             </div>
             <div>
@@ -133,15 +132,12 @@ export default function Account({profData}){
         </div>
         :
         <div className="App">
-            {/* <h1>{props.page}</h1> */}
             <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
             <div>
                 <ul>
-                    <li>Location {profData.location}</li>
-                    {/* <li>Email {profData.}</li> */}
-                    <li>LinkedIn {profData.linkedin}</li>
-                    <li>Pronouns {profData.genderpronouns}</li>
-                    {/* <li>Birthday {profData.}</li> */}
+                    <li>Location: {profData.location}</li>
+                    <li>LinkedIn: {profData.linkedin}</li>
+                    <li>Pronouns: {profData.genderpronouns}</li>
                 </ul>
             </div>
             <div>

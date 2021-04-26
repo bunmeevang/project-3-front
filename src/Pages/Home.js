@@ -5,6 +5,7 @@ import "../HomePageComponents/HomeFeed"
 import HomeFeed from '../HomePageComponents/HomeFeed'
 import HomeNav from '../HomePageComponents/HomeNav'
 import Account from "../HomePageComponents/Account"
+import styles from "./Home.module.css";
 
 function Home() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -19,7 +20,7 @@ function Home() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://codr-project-3.herokuapp.com/profile/",
+        "https://codr-project3.herokuapp.com/profile/",
       );
       const data = await response.json();
       data.map( object => {
@@ -60,7 +61,7 @@ function Home() {
                     Username: <input type='text' onChange={event => setUserName(event.target.value)}></input> <br />
                     <button type='submit' onClick={handleSubmit}>Submit!</button>
               </form>
-              <div> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+              <div className={styles.donthavelogin}> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
           </div>
       </div>
     );

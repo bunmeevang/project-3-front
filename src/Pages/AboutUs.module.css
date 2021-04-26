@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
+
+
+.App {
+    background-color: thistle;
+    text-align: left;
+    font-size: 15px;
+    /* border: 1px solid black; */
+    margin: 125px 150px;
+    border-radius: 10px;
+    /* border-style: outset; */
+    box-shadow: 0px 0px 10px gray;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.aboutUs {
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(0%, 30%);
+    /* border: 2px solid black; */
+    margin-left: 50px;
+    color: aqua;
+}
+
+.aboutUl {
+    list-style-type: none;
+}
+
+.names {
+    margin-left: -30px;
+    /* color: aqua; */
+}
+
+.aboutLi {
+    margin-left: -30px;
+    list-style-type: none;
+}
+
+.aboutIntro {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 50px;
+    color: aqua;
+}
+
+.intro {
+    /* border: 2px solid black; */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contact:hover{
+    box-shadow: 0px 0px 10px aqua;
+    transform: translate(-50%, 10%) scale(1.1);
+    transition: ease-in .5s;
+}
+
+.contact {
+    margin-bottom: 30px;
+    margin-left: auto;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 10px 10px;
+    padding: 0px 20px;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 10%);
+    background-color: lightskyblue;
+    color: aqua;
+    border: none;
+}
+
+/* .email {
+    margin-left: 50px;
+} */
+
+/* .background {
+    border: 2px solid black;
+    height: 200px;
+} */
