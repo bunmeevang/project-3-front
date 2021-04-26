@@ -5,7 +5,7 @@ import Home from './Pages/Home'
 import Faq from './Pages/Faq'
 import Account from './HomePageComponents/Account'
 import CreateUser from './Pages/CreateUser'
-// import Header from './Components/Header/Header';
+import HomeFeed from './HomePageComponents/HomeFeed';
 
 // Save the Component, key and path in an array of objects for each Route
 // You could write all routes by hand but I'm lazy annd this lets me use
@@ -42,7 +42,7 @@ export default function App () {
       {/* <Header /> */}
       <header className="headers">
         {/* <h1 className="title">CODR</h1> */}
-        <nav>
+       <nav className="linkFlex">
           {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>
       </header>

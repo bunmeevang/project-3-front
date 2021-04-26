@@ -35,6 +35,7 @@ function Home() {
     }
   }
 
+
   const isLogged = () =>{
   return (
     <div className="App">
