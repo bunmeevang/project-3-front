@@ -16,15 +16,15 @@ export default function CreateUser() {
         e.preventDefault();
         try {
             const response = await fetch(
-            `https://codr-project3.herokuapp.com/profile/`
-            ,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify(newInfo)
-            }
+                `https://codr-project3.herokuapp.com/profile/`
+                ,
+                {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newInfo)
+                }
             );
             const data = await response.json();
             console.log(newInfo)
@@ -42,8 +42,8 @@ export default function CreateUser() {
         }
     }
     const handleChange = (e) => {
-        console.log(e.target.firstname)
         setNewInfo({ ...newInfo, [e.target.name]: e.target.value });
+
         console.log(newInfo)
       };
 
