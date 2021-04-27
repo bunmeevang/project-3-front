@@ -6,6 +6,7 @@ import{useState, useEffect} from "react";
 export default function HomeFeed({userName}) {
     /////////ARRAY
     const [apiData, setApiData] = useState([]);
+    // const [thePush, setThePush] = useState([...apiData.push])
 
 
     const getArrayData = async () => {
@@ -44,6 +45,7 @@ export default function HomeFeed({userName}) {
                 setUpdateArray({
                     user: `${userName}`,
                     body: ""
+                    // push: [... ]
                 });
         } catch (error){
             console.error(error);
@@ -75,6 +77,7 @@ export default function HomeFeed({userName}) {
         setUpdateArray({ ...array, [e.target.name]: e.target.value});
         console.log(e.target)
         console.log(array);
+        console.log(apiData)
     };
 
 
