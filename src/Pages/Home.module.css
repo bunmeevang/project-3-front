@@ -59,3 +59,13 @@
     font-family: 'Roboto Mono', monospace;
     cursor: pointer;
 }
+
+.homeBorder {
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 45px;
+    margin: 50px 20%;
+}

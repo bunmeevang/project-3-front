@@ -44,7 +44,7 @@ export default function App () {
       <header className="headers">
         <h1 className="title">CODR</h1>
        <nav className="linkFlex">
-          {reverseRoute.reverse().map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
+          {reverseRoute.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>
       </header>
       <Switch>
