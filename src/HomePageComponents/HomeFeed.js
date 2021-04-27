@@ -3,36 +3,15 @@ import{useState, useEffect} from "react";
 
 
 
-export default function HomeFeed() {
+export default function HomeFeed({userName}) {
+    /////////ARRAY
     const [apiData, setApiData] = useState([]);
-    const apiUrl = "https://codr-project-3.herokuapp.com/array"
-    const [pushData, setPushData] = useState([])
+    // const [thePush, setThePush] = useState([...apiData.push])
 
-    const [newPush, setNewPush] = useState({
-        user: "",
-        push: ""
-    });
-    const getPushData = async () => {
+
+    const getArrayData = async () => {
         try {
-            const res = await fetch("https://codr-project-3.herokuapp.com/push");
-            const data = await res.json();
-            setPushData(data)
-
-        } catch (err){
-            console.log(err);
-        }
-
-
-    }
-
-    const [array, setUpdateArray] = useState({
-        user: "",
-        body: ""
-    });
-
-    const getApiData = async () => {
-        try {
-        const res = await fetch(apiUrl);
+        const res = await fetch("https://codr-project-3.herokuapp.com/array/");
         
         const data = await res.json();
         setApiData(data)
@@ -43,27 +22,113 @@ export default function HomeFeed() {
     }
     useEffect(() => {
         getPushData();
-        getApiData();
+        getArrayData();
     }, []);
+
+    const arrayPostMethod = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(
+                "https://codr-project-3.herokuapp.com/array/"
+                ,
+                {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(array)
+                }
+                );
+                const data = await response.json();
+                setApiData([...apiData, data]);
+                console.log('hello')
+                setUpdateArray({
+                    user: `${userName}`,
+                    body: ""
+                    // push: [... ]
+                });
+        } catch (error){
+            console.error(error);
+        }
+    };
+
+    const handleDelete = async (e, id, i) => {
+        try {
+            const response = await fetch(
+            `https://codr-project-3.herokuapp.com/array/${id}/`,
+            {
+                method: "DELETE",
+                header: {
+                    "Content-Type": "application/json"
+                }
+            }
+            );
+            const data = response.json();
+            const copyApiData = [...apiData];
+            copyApiData.splice(i, 1);
+            setApiData(copyApiData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const handleChange = (e) => {
+        setUpdateArray({ ...array, [e.target.name]: e.target.value});
+        console.log(e.target)
+        console.log(array);
+        console.log(apiData)
+    };
+
+
+/////////////////////PUSH
+
+
+
+    const [pushData, setPushData] = useState([])
+
+    const [newPush, setNewPush] = useState({
+        user: `${userName}`,
+        push: ""
+    });
+    const getPushData = async () => {
+        try {
+            const res = await fetch("https://codr-project-3.herokuapp.com/push/");
+            const data = await res.json();
+            setPushData(data)
+
+        } catch (err){
+            console.log(err);
+        }
+    }
+
+    const [array, setUpdateArray] = useState({
+        user: `${userName}`,
+        body: ""
+    });
+    const [push, setUpdatePush] = useState({
+        user: `${userName}`,
+        body: ""
+    });
 
     const submit = async (e) => {
         e.preventDefault();
         try {
             const response = await fetch(
-                "https://codr-project-3.herokuapp.com/push",
+                "https://codr-project-3.herokuapp.com/push/",
                 {
                     method: "POST",
                     header: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(array)
+                    body: JSON.stringify(push)
                 
                 }
                 );
                 const data = await response.json();
                 setPushData([...pushData, data]);
                 setNewPush({
-                    user: "",
+                    user: `${userName}`,
                     push: ""
                 });
         } catch (error){
@@ -74,7 +139,7 @@ export default function HomeFeed() {
     const pushDelete = async (e, id, i) => {
         try {
             const response = await fetch(
-            `https://codr-project-3.herokuapp.com/push/${id}`,
+            `https://codr-project-3.herokuapp.com/push/${id}/`,
             {
                 method: "DELETE",
                 header: {
@@ -97,95 +162,15 @@ export default function HomeFeed() {
         console.log(newPush);
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch(
-                "https://codr-project-3.herokuapp.com/array",
-                {
-                    method: "POST",
-                    header: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(array)
-                
-                }
-                );
-                const data = await response.json();
-                setApiData([...apiData, data]);
-                setUpdateArray({
-                    user: "",
-                    body: ""
-                });
-        } catch (error){
-            console.error(error);
-        }
-    };
-
-    const handleDelete = async (e, id, i) => {
-        try {
-            const response = await fetch(
-            `https://codr-project-3.herokuapp.com/array/${id}`,
-            {
-                method: "DELETE",
-                header: {
-                    "Content-Type": "application/json"
-                }
-            }
-            );
-            const data = response.json();
-            const copyApiData = [...apiData];
-            copyApiData.splice(i, 1);
-            setApiData(copyApiData);
-
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    const handleChange = (e) => {
-        setUpdateArray({ ...array, [e.target.name]: e.target.value});
-        console.log(array);
-    };
 
     
 
 return(
     <div>
-        <form onSubmit={submit}>
-            <label>
+        
+        <form onSubmit={arrayPostMethod}>
+            {/* <label>
                 user: {" "}
-
-            <input 
-            type="text"
-            name="user"
-            value={newPush.user}
-            onChange={change}
-            placeHolder ="Enter a name"
-            />
-            </label>
-
-            <label>
-                push: {" "}
-
-            <input 
-            type="text" 
-            name="push"
-            value={newPush.push}
-            onChange={change}
-            placeHolder ="Enter an array"
-            />
-            </label>
-            <br/>
-            <input type="submit"/>
-
-        </form>
-
-
-        <form onSubmit={handleSubmit}>
-            <label>
-                user: {" "}
-
             <input 
             type="text"
             name="user"
@@ -193,11 +178,10 @@ return(
             onChange={handleChange}
             placeHolder ="Enter a name"
             />
-            </label>
+            </label> */}
 
             <label>
                 body: {" "}
-
             <input 
             type="text" 
             name="body"
@@ -208,7 +192,6 @@ return(
             </label>
             <br/>
             <input type="submit"/>
-
         </form>
         
         <div>
@@ -226,28 +209,47 @@ return(
                         DELETE ME
 
                     </button>
-
-
                 </div>
-
                 )
             })}
-
-
             {apiData.map((apiData, i) => {
                 return ( <div>
+                    ARRAY                     {apiData.id}
                     <h3 key={i}> 
                     name: {apiData.user}</h3>
                     <h4>body: {apiData.body}</h4>
+
                     <button
-                    onClick={(e) => {
-                        handleDelete(e, apiData.user, i);
-                    }}
-                    >
+                        onClick={(e) => {
+                            handleDelete(e, apiData.id, i);
+                        }}>
                         DELETE ME
-
                     </button>
+            <form onSubmit={submit}>
+                <label>
+                    user: {" "}
+                <input 
+                type="text"
+                name="user"
+                value={newPush.user}
+                onChange={change}
+                placeHolder ="Enter a name"
+                />
+                </label>
 
+                <label>
+                    push: {" "}
+                <input 
+                type="text" 
+                name="push"
+                value={newPush.push}
+                onChange={change}
+                placeHolder ="Enter an array"
+                />
+                </label>
+                <br/>
+                <input type="submit"/>
+            </form>
                     </div>
                 )
             })}

@@ -18,7 +18,7 @@ export default function Account({profData}){
         try {
             console.log(editedInfo)
             const response = await fetch(
-            `https://codr-project3.herokuapp.com/profile/${pkKey}`
+            `https://codr-project3.herokuapp.com/profile/${pkKey}/`
             ,
             {
               method: "PUT",
