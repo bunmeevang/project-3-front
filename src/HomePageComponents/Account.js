@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import DelAccount from './DelAccount'
+import styles from "./Account.module.css";
 
 export default function Account({profData}){
     const [pkKey, setPkKey] = useState(profData.id)
@@ -52,19 +53,21 @@ export default function Account({profData}){
     
 
     return (
-        <div className="App">
-        <h5 onClick={() => {
+        <div>
+        <div className={styles.update} onClick={() => {
             if(update) {
                 setUpdate(false)
             } else setUpdate(true)
-        }}>Update</h5>
+        }}>Update</div>
+            <div className={styles.delete}>
+                <DelAccount profData={profData}/>
+            </div>
         {update ?       
-        <div>
-            <DelAccount profData={profData}/>
+        <div className={styles.innerBorder}>
             <form onSubmit={fetchProfileInfo}>
                 <label>
-                    First name:{" "}
-                    <input
+                    First name:<span className={styles.textBox}>{" "}</span>
+                    <input className={styles.text}
                     type="text"
                     name="firstname"
                     value={editedInfo.firstname}
@@ -73,7 +76,7 @@ export default function Account({profData}){
                 </label><br /><br />
                 <label>
                     Last name:{" "}
-                    <input
+                    <input className={styles.text}
                     type="text"
                     name="lastname"
                     value={editedInfo.lastname}
@@ -82,7 +85,7 @@ export default function Account({profData}){
                 </label><br /><br />
                 <label>
                     Gender Pronouns:{" "}
-                    <input
+                    <input className={styles.text}
                     type="text"
                     name="genderpronouns"
                     value={editedInfo.genderpronouns}
@@ -91,7 +94,7 @@ export default function Account({profData}){
                 </label><br /><br />
                 <label>
                     Location:{" "}
-                    <input
+                    <input className={styles.text}
                     type="text"
                     name="location"
                     value={editedInfo.location}
@@ -100,7 +103,7 @@ export default function Account({profData}){
                 </label><br /><br />
                 <label>
                     About Me:{" "}
-                    <input
+                    <input className={styles.text}
                     type="text"
                     name="aboutme"
                     value={editedInfo.aboutme}
@@ -109,7 +112,7 @@ export default function Account({profData}){
                 </label><br /><br />
                 <label>
                     LinkedIn:{" "}
-                    <input
+                    <input className={styles.text}
                     type="text"
                     name="linkedin"
                     value={editedInfo.linkedin}
@@ -120,8 +123,8 @@ export default function Account({profData}){
                 <input type="submit" />
             </form>
             <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
-            <div>
-                <ul>
+            <div className={styles.aboutme}>
+                <ul className={styles.list}>
                     <li>Location {profData.location}</li>
                     <li>LinkedIn {profData.linkedin}</li>
                     <li>Pronouns {profData.genderpronouns}</li>
@@ -133,10 +136,10 @@ export default function Account({profData}){
             </div>
         </div>
         :
-        <div className="App">
+        <div className={styles.aboutme}>
             <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
             <div>
-                <ul>
+                <ul className={styles.list}>
                     <li>Location: {profData.location}</li>
                     <li>LinkedIn: {profData.linkedin}</li>
                     <li>Pronouns: {profData.genderpronouns}</li>
