@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import AboutUs from './Pages/AboutUs'
 import Home from './Pages/Home'
 import Faq from './Pages/Faq'
-import Account from './Pages/Account'
+import Account from './HomePageComponents/Account'
 import CreateUser from './Pages/CreateUser'
 import HomeFeed from './HomePageComponents/HomeFeed';
 
@@ -24,25 +24,27 @@ const routes = [
     key: 'Faq',
     path: '/faq'
   },
-  {
-    Component: Account,
-    key: 'Account',
-    path: '/account'
-  },
+  // {
+  //   Component: Account,
+  //   key: 'Account',
+  //   path: '/account'
+  // },
   {
     Component: Home,
     key: 'Home',
     path: '/'
   }
 ]
+const reverseRoute = [... routes].reverse();
 
 export default function App () {
   return (
     <Router>
-      
-      <header>
-        <nav>
-          {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
+      {/* <Header /> */}
+      <header className="headers">
+        {/* <h1 className="title">CODR</h1> */}
+       <nav className="linkFlex">
+          {reverseRoute.reverse().map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>
       </header>
       <Switch>
