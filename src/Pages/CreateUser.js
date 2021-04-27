@@ -48,9 +48,9 @@ export default function CreateUser() {
       };
 
     return (
-        <div>
+        <div className={styles.border}>
             <h1 className={styles.createnewuser}>Create New User</h1>
-            <form onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={handleSubmit}>
                 <label>
                     First name:{""}
                     <input
@@ -60,7 +60,7 @@ export default function CreateUser() {
                     onChange={handleChange}
                     />
                 </label><br /><br />
-                <input type='submit' />
+                <input className={styles.input}type='submit' />
              </form>
          </div>
     )

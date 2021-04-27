@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&family=Righteous&family=Roboto+Mono:ital,wght@1,200&display=swap');
+
 .createnewuser {
-    font-size: 20px;
+    color: green;
+}
+
+.border {
+    text-align: center;
+    /* border: 2px solid black; */
+    margin: 50px 20%;
+    border-radius: 10px;
+    background-color: lightgreen;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0px 10px 20px gray;
+}
+
+.input:hover{
+    transform: scale(1.1);
+    transition: ease-in-out .3s;
+    color: green;
+    background-color: aqua;
+}
+
+.input{
+    /* border: 2px solid black; */
+    margin-bottom: 30px;
+    height: 30px;
+    width: 80px;
+    background-color: goldenrod;
+    border-radius: 5px;
+    color: aqua;
+    cursor: pointer;
 }
