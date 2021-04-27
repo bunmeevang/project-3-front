@@ -38,7 +38,7 @@ function Home() {
 
   const isLogged = () =>{
   return (
-    <div className="App">
+    <div className={styles.homeBorder}>
       <p onClick={()=> setSelectAcc(true)}>Account</p>
       <p onClick={()=> setSelectAcc(false)}>Home</p>
       {selectAcc ? <Account profData={theProfData}/>
