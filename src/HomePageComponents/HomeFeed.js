@@ -5,7 +5,7 @@ import{useState, useEffect} from "react";
 
 export default function HomeFeed() {
     const [apiData, setApiData] = useState([]);
-    const apiUrl = "https://codr-project-3.herokuapp.com/array"
+    const apiUrl = "https://codr-project3.herokuapp.com/array/"
     const [pushData, setPushData] = useState([])
 
     const [newPush, setNewPush] = useState({
@@ -14,7 +14,7 @@ export default function HomeFeed() {
     });
     const getPushData = async () => {
         try {
-            const res = await fetch("https://codr-project-3.herokuapp.com/push");
+            const res = await fetch("https://codr-project3.herokuapp.com/push/");
             const data = await res.json();
             setPushData(data)
 
@@ -50,7 +50,7 @@ export default function HomeFeed() {
         e.preventDefault();
         try {
             const response = await fetch(
-                "https://codr-project-3.herokuapp.com/push",
+                "https://codr-project3.herokuapp.com/push/",
                 {
                     method: "POST",
                     header: {
@@ -74,7 +74,7 @@ export default function HomeFeed() {
     const pushDelete = async (e, id, i) => {
         try {
             const response = await fetch(
-            `https://codr-project-3.herokuapp.com/push/${id}`,
+            `https://codr-project3.herokuapp.com/push/${id}/`,
             {
                 method: "DELETE",
                 header: {
@@ -101,7 +101,7 @@ export default function HomeFeed() {
         e.preventDefault();
         try {
             const response = await fetch(
-                "https://codr-project-3.herokuapp.com/array",
+                "https://codr-project3.herokuapp.com/array/",
                 {
                     method: "POST",
                     header: {
@@ -125,7 +125,7 @@ export default function HomeFeed() {
     const handleDelete = async (e, id, i) => {
         try {
             const response = await fetch(
-            `https://codr-project-3.herokuapp.com/array/${id}`,
+            `https://codr-project3.herokuapp.com/array/${id}/`,
             {
                 method: "DELETE",
                 header: {
