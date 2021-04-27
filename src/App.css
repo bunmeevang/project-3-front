@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&family=Righteous&family=Roboto+Mono:ital,wght@1,200&display=swap');
+
 
 .App {
   text-align: center;
@@ -22,22 +25,32 @@
   background: url(https://img5.goodfon.com/wallpaper/nbig/2/27/zelenyi-fon-tekstura-abstract-background-green-color.jpg);
   /* background: url(https://wallpaperaccess.com/full/2835280.jpg); */
   background-size: 100%;
+  box-shadow: 0px 2px 5px green;
 }
 
 .linkFlex{
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid black; */
-  width: 100%;
+  /* border: 2px solid black; */
+  width: 50%;
+  margin-top: 50px;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
 }
 
 .linkFlex > a {
   text-decoration: none;
+  color: aqua;
 }
 
 .title{
   font-family: 'Aldrich', sans-serif;
   font-size: 50px;
+  margin-left: 5%;
+  -webkit-text-stroke: 0.1px black;
+  color: aqua;
+  font-weight: bolder;
 }
 
 .user{
