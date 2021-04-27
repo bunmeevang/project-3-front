@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import styles from "./Account.module.css";
 
 export default function DelAccount({profData}) {
 
@@ -39,7 +40,7 @@ export default function DelAccount({profData}) {
     }
     return(
         <div>
-            <button onClick={()=>{setDelOne(true)}}>Delete Profile</button>
+            <div className={styles.delBtn} onClick={()=>{setDelOne(true)}}>Delete Profile</div>
             {delOne ?
                 <div>
                     <h3>ERROR! Are you sure you want to delete?</h3>
