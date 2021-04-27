@@ -267,7 +267,7 @@ return(
                 </label>
                 </div>
                 <br/>
-                <div className={styles.submit}type="submit">Submit</div>
+                <input className={styles.submit}type="submit"/>
             </form>
                     </div>
                 )
