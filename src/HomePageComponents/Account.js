@@ -137,7 +137,7 @@ export default function Account({profData}){
         </div>
         :
         <div className={styles.aboutme}>
-            <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
+            <h3> {profData.firstname} {profData.lastname} </h3>
             <div>
                 <ul className={styles.list}>
                     <li>Location: {profData.location}</li>

@@ -1,6 +1,5 @@
 import{useState, useEffect} from "react";
-
-
+import styles from "./HomeFeed.module.css";
 
 
 export default function HomeFeed({userName}) {
@@ -184,7 +183,7 @@ export default function HomeFeed({userName}) {
     
 
 return(
-    <div>
+    <div className={styles.homeTitle}>
         
         <form onSubmit={arrayPostMethod}>
             {/* <label>
@@ -198,55 +197,56 @@ return(
             />
             </label> */}
 
-            <label>
-                body: {" "}
+            <label className={styles.label}>
+                Body: {" "}
             <input 
             type="text" 
             name="body"
             value={array.body}
             onChange={handleChange}
-            placeHolder ="Enter an array"
+            placeHolder ="Enter an comment"
             />
             </label>
             <br/>
-            <input type="submit"/>
+            <div className={styles.submit}type="submit">Submit</div>
         </form>
         
-        <div>
+        <div className={styles.homeBorder}>
             {pushData.map((pushData, i) => {
                 return ( <div>
 
                    <h3 key={i}> 
-                    name: {pushData.user}</h3>
-                    <h4>comment: {pushData.comment}</h4>
-                    <button
+                    <span className={styles.name}>Name:</span> {pushData.user}</h3>
+                    <h4><span className={styles.name}>Comment:</span> {pushData.comment}</h4>
+                    <div className={styles.delBtn}
                     onClick={(e) => {
                         pushDelete(e, pushData.user, i);
                     }}
                     >
-                        DELETE ME
+                        DELETE 
 
-                    </button>
+                    </div>
                 </div>
                 )
             })}
             {apiData.map((apiData, i) => {
-                return ( <div>
-                    ARRAY                     {apiData.id}
+                return ( <div className={styles.arrayBorder}>
+                    <span className={styles.arrayName}>ARRAY                    {apiData.id}</span>
                     <h3 key={i}> 
                     name: {apiData.user}</h3>
                     <h4>body: {apiData.body}</h4>
 
-                    <button
+                    <div className={styles.delBtn}
                         onClick={(e) => {
                             handleDelete(e, apiData.id, i);
                         }}>
-                        DELETE ME
-                    </button>
+                        DELETE 
+                    </div>
             <form onSubmit={submit}>
-                <label>
-                    user: {" "}
-                <input 
+                <div className={styles.commentBox}>
+                <label className={styles.text}>
+                    <span className={styles.colorChange}>User: {" "}</span>
+                <input className={styles.textBox} 
                 type="text"
                 name="user"
                 value={newPush.user}
@@ -256,8 +256,8 @@ return(
                 </label>
 
                 <label>
-                    comment: {" "}
-                <input 
+                    <span className={styles.colorChange}>Comment: {" "}</span>
+                <input className={styles.textBox}
                 type="text" 
                 name="push"
                 value={newPush.comment}
@@ -265,8 +265,9 @@ return(
                 placeHolder ="Enter an comment"
                 />
                 </label>
+                </div>
                 <br/>
-                <input type="submit"/>
+                <div className={styles.submit}type="submit">Submit</div>
             </form>
                     </div>
                 )

@@ -43,7 +43,7 @@ function Home() {
       <p className={styles.navBtn} onClick={()=> setSelectAcc(false)}>Home</p>
       {selectAcc ? <Account profData={theProfData}/>
        : <div>
-       <h1> Home Page </h1>
+       <h1 className={styles.homepage}> Home Page </h1>
        <HomeFeed userName={userName}/>
        <HomeNav />
        </div>}

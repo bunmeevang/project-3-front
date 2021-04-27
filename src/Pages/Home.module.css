@@ -97,3 +97,8 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.homepage {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 39px;
+}
