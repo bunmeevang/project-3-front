@@ -35,7 +35,7 @@ const routes = [
     path: '/'
   }
 ]
-const reverseRoute = routes.reverse();
+const reverseRoute = [... routes].reverse();
 
 export default function App () {
   return (

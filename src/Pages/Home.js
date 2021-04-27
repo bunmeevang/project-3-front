@@ -44,7 +44,7 @@ function Home() {
       {selectAcc ? <Account profData={theProfData}/>
        : <div>
        <h1> Home Page </h1>
-       <HomeFeed />
+       <HomeFeed userName={userName}/>
        <HomeNav />
        </div>}
       
