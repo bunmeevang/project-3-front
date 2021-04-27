@@ -66,7 +66,7 @@ export default function Account({profData}){
         <div className={styles.innerBorder}>
             <form onSubmit={fetchProfileInfo}>
                 <label>
-                    First name:<span className={styles.textBox}>{" "}</span>
+                    <span className={styles.textBox}>First name:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="firstname"
@@ -75,7 +75,7 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <label>
-                    Last name:{" "}
+                    <span className={styles.textBox}>Last name:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="lastname"
@@ -84,7 +84,7 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <label>
-                    Gender Pronouns:{" "}
+                    <span className={styles.textBox}>Gender Pronouns:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="genderpronouns"
@@ -93,7 +93,7 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <label>
-                    Location:{" "}
+                    <span className={styles.textBox}>Location:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="location"
@@ -102,7 +102,7 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <label>
-                    About Me:{" "}
+                    <span className={styles.textBox}>About Me:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="aboutme"
@@ -111,7 +111,7 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <label>
-                    LinkedIn:{" "}
+                    <span className={styles.textBox}>LinkedIn:{" "}</span>
                     <input className={styles.text}
                     type="text"
                     name="linkedin"
@@ -120,9 +120,9 @@ export default function Account({profData}){
                     />
                 </label><br /><br />
                 <br /><br />
-                <input type="submit" />
+                <div className={styles.formSub}type="submit">Submit</div>
             </form>
-            <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
+            {/* <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
             <div className={styles.aboutme}>
                 <ul className={styles.list}>
                     <li>Location {profData.location}</li>
@@ -133,11 +133,11 @@ export default function Account({profData}){
             <div>
                 <h4>About Me</h4>
                 <p>{profData.aboutme}</p>
-            </div>
+            </div> */}
         </div>
         :
         <div className={styles.aboutme}>
-            <h3> {profData.id}{profData.firstname} {profData.lastname} </h3>
+            <h3> {profData.firstname} {profData.lastname} </h3>
             <div>
                 <ul className={styles.list}>
                     <li>Location: {profData.location}</li>

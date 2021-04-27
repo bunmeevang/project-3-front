@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Mono:ital,wght@1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&family=Righteous&family=Roboto+Mono:ital,wght@1,200&display=swap');
+
+
+.homeBorder, .homeTitle{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.delBtn:hover, .submit:hover{
+    transform: translate(-50%, 10%) scale(1.1);
+    transition: ease-in-out .3s;
+    /* transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); */
+    box-shadow: 0px 10px 10px green;
+    color: green;
+    background-color: aqua;
+}
+
+.delBtn {
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 10%);
+    font-size: 18px;
+    /* border: 1px solid black; */
+    background-color: goldenrod;
+    height: 27px;
+    width: 80px;
+    color: aqua;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.submit {
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 10%);
+    font-size: 18px;
+    /* border: 1px solid black; */
+    background-color: darkgreen;
+    height: 27px;
+    width: 80px;
+    color: aqua;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.label{
+    font-size: 19px;
+}
+
+.name {
+    color: green;
+    font-size: 20px;
+}
+
+.arrayBorder {
+    margin-top: 50px;
+    
+}
+
+.arrayName {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 25px;
+}
+
+.textBox {
+    margin-top: 5px;
+    /* border: 1px solid black; */
+    margin-right: 15px;
+    font-size: 15px;
+    transform: translate(-50px);
+    margin-right: 0;
+    width: 150px;
+    display: inline-block;
+    float: right;
+}
+
+.commentBox {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    height: 100px;
+}
+
+.text{
+    margin-top: 55px;
+}
+
+.colorChange {
+    font-size: 20px;
+    color: green;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    display: inline-block;
+    float: left;
+    transform: translate(120px)
+}
