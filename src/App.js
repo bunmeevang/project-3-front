@@ -35,6 +35,7 @@ const routes = [
     path: '/'
   }
 ]
+const reverseRoute = routes.reverse();
 
 export default function App () {
   return (
@@ -43,7 +44,7 @@ export default function App () {
       <header className="headers">
         <h1 className="title">CODR</h1>
        <nav className="linkFlex">
-          {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
+          {reverseRoute.reverse().map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>
       </header>
       <Switch>

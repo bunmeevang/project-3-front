@@ -16,6 +16,7 @@ export default function Account({profData}){
         // console.log(pkKey) 
         e.preventDefault();
         try {
+            console.log(editedInfo)
             const response = await fetch(
             `https://codr-project3.herokuapp.com/profile/${pkKey}`
             ,
@@ -44,7 +45,7 @@ export default function Account({profData}){
     }
     const handleChange = (e) => {
         setEditedInfo({ ...editedInfo, [e.target.name]: e.target.value });
-        console.log(editedInfo)
+        // console.log(editedInfo)
       };
 
     
