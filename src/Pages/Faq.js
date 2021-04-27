@@ -10,7 +10,7 @@ export default function Faq(props){
             </div>
             <div>
                 <p className={styles.questions}><span className={styles.changeColor}>Q:</span> How do I create An account?</p>
-                <p className={styles.answers}><span className={styles.changeColor}>A:</span> Click on the "Create a new user!" in the home page.</p>
+                <p className={styles.answers}><span className={styles.changeColor}>A:</span> Click on the "Create a new user!" on the home page.</p>
             </div>
         </div>
     )

@@ -41,7 +41,7 @@ export default function App () {
     <Router>
       {/* <Header /> */}
       <header className="headers">
-        {/* <h1 className="title">CODR</h1> */}
+        <h1 className="title">CODR</h1>
        <nav className="linkFlex">
           {routes.map(route => <Link key={route.key} to={route.path}>{route.key}</Link>)}
         </nav>

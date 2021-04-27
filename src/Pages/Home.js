@@ -54,15 +54,15 @@ function Home() {
 
   const notLogged =() =>{
     return (
-      <div className="App">
-        <h1 className="title">CODR</h1>
-          <div>
-              <h2>LOGIN</h2>
-              <form className="user">
+      <div>
+        {/* <h1 className={styles.title}>CODR</h1> */}
+          <div className={styles.border}>
+              <h2 className={styles.login}>LOGIN</h2>
+              <form className={"user"}>
                     Username: <input type='text' onChange={event => setUserName(event.target.value)}></input> <br />
-                    <button type='submit' onClick={handleSubmit}>Submit!</button>
+                    <button className={styles.button} type='submit' onClick={handleSubmit}>Submit!</button>
               </form>
-              <div className={styles.donthavelogin}> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
+              <div className={styles.text}> Don't have a login? <Link to={"/createUser"}>Create a new user!</Link> </div>
           </div>
       </div>
     );
