@@ -1,6 +1,6 @@
 # [CODR](https://bunmeevang.github.io/project-3-front/)
 This project was created as a media for people to meet eachother. 
-Check it out here: https://github.com/bunmeevang/project-3-front
+Check it out here: https://bunmeevang.github.io/project-3-front/#/
 
 CODR was created using a Django Backend and a React as the front end.
 
